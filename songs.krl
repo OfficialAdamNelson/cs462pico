@@ -15,9 +15,11 @@ ruleset see_songs {
 	  pre {
 	  	query = event:attr("song");
 	  }
+	  send_directive("debugging") with 
+	    value = query;
 	  always {
 	      raise explicit event 'found_hymn'
-	      if (query eq "god");
+	      if (query.match(/god/i));
 	  }
 	}
 
