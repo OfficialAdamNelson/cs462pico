@@ -14,7 +14,7 @@ ruleset see_songs {
 	  select when explicit sung
 	  always {
 	      raise explicit event 'found_hymn' 
-	      if (event:attr("song").match(/god/i));
+	      if (event:attr("song").match(god/i));
 	  }
 	}
 
