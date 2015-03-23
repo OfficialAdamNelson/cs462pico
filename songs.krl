@@ -19,7 +19,7 @@ ruleset see_songs {
 	    value = query;
 	  always {
 	      raise explicit event 'found_hymn'
-	      if (query.match(/god/i));
+	      if (query.match(#god#));
 	  }
 	}
 
