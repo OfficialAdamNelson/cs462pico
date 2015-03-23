@@ -17,7 +17,7 @@ ruleset see_songs {
 	  }
 	  always {
 	      raise explicit event 'found_hymn'
-	      if (query.match(#god#));
+	      if (query eq "god");
 	  }
 	}
 
