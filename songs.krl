@@ -4,6 +4,10 @@ ruleset see_songs {
 	  select when echo message msg_type re/^song$/ input "(.*)" setting(m) 
 	  send_directive("sing") with
 		song = m;
+	  always {
+            raise explicit event 'sung' with 
+              song = m;
+          }
 	}
 
 }
