@@ -9,5 +9,11 @@ ruleset see_songs {
               song = m;
           }
 	}
+	
+	rule find_hymn is active {
+	  select when explicit sung
+	  if event:attr("song").match(re/god/i) then
+	    notify("test", "hi")
+	}
 
 }
