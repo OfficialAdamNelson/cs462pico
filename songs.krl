@@ -15,8 +15,7 @@ ruleset see_songs {
 	  send_directive("debug") with
 	    value = event:attr("song");
 	  always {
-	      raise explicit event 'found_hymn' 
-	      if (event:attr("song").match(##));
+	      raise explicit event 'found_hymn';
 	  }
 	}
 
