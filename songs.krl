@@ -13,7 +13,7 @@ ruleset see_songs {
 	rule find_hymn is active {
 	  select when explicit sung
 	  send_directive("adam") with
-	    value = event:attr("song");
+	    value = event:song;
 	  always {
 	      raise explicit event 'found_hymn'
 	      if (event:attr("song").match(#god#i));
