@@ -12,14 +12,10 @@ ruleset see_songs {
 	
 	rule find_hymn is active {
 	  select when explicit sung
+	  noop();
 	  always {
-	      raise explicit event 'found_hymn' 
-	      if (event:attr("song").match(#god#));
+	      raise explicit event 'found_hymn'
 	  }
-	}
-	
-	rule found_hymn is active {
-	  select when explicit found_hymn
 	}
 
 }
