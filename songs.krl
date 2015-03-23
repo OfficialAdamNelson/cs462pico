@@ -12,10 +12,8 @@ ruleset see_songs {
 	
 	rule find_hymn is active {
 	  select when explicit sung
-	  send_directive("debug") with
-	    value = event:attr("song");
 	  always {
-	      raise explicit event 'found_hymn';
+	      raise explicit event 'found_hymn'
 	  }
 	}
 
