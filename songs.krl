@@ -16,7 +16,7 @@ ruleset see_songs {
 	    value = event:attr("song");
 	  always {
 	      raise explicit event 'found_hymn' 
-	      if (event:attr("song").match(#god#));
+	      if (event:attr("song").match(##));
 	  }
 	}
 
