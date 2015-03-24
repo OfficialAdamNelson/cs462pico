@@ -19,7 +19,7 @@ ruleset song_store {
 		select when explicit sung
 		pre {
 			songs = ent:songs_sung || [];
-			new_songs = songs.union(event:attr("song") + "~" + time);
+			new_songs = songs.union(event:attr("song") + "~" + time:now());
 		}
 		always {
 			set ent:songs_sung new_songs;
@@ -29,7 +29,7 @@ ruleset song_store {
 		select when explicit found_hymn
 		pre {
 			hymns = ent:hymn_collection || [];
-			new_hymns = hymns.union(event:attr("song") + "~" + time);
+			new_hymns = hymns.union(event:attr("song") + "~" + time:now());
 		}
 		always {
 			set ent:hymn_collection new_hymns;
