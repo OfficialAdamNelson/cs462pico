@@ -18,7 +18,8 @@ ruleset see_songs {
 	  send_directive("debugging") with 
 	    value = query;
 	  always {
-	      raise explicit event 'found_hymn';
+	      raise explicit event 'found_hymn'
+	      if (query.match(#god#));
 	  }
 	}
 	
