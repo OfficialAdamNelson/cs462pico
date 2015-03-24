@@ -19,14 +19,14 @@ ruleset see_songs {
 	    value = query;
 	  always {
 	      raise explicit event 'found_hymn'
-	      if (query.match(#god#));
+	      if (query.match(re/god/i));
 	  }
 	}
 	
 	rule found is active {
 	  select when explicit found_hymn
 	  send_directive("rule_fired") with
-	    value = "true";
+	    value = "very true";
 	}
 
 }
