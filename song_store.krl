@@ -1,5 +1,6 @@
 ruleset song_store {
 	meta {
+		author "Adam Nelson"
 		provides songs, hymns, secular_music
 		sharing on
 	}
